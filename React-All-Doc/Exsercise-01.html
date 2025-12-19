@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 01</title>
+</head>
+<body>
+  <div class="js-container"></div>
+  <div class="js-container2"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const hedding = <h2>My Name Is: Mudasir Iqbal</h2>;
+
+      const div = (
+        <div>
+          <h1>Cotton Stacks</h1><br></br>
+          <h1>Price Rs: 10$</h1><br></br>
+          <button>Add To Card</button>
+        </div>
+      );
+
+      const container = document.querySelector('.js-container');
+      const container2 = document.querySelector('.js-container2');
+      ReactDOM.createRoot(container).render(hedding);
+      ReactDOM.createRoot(container2).render(div);
+    </script>
+</body>
+</html>
