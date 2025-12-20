@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 01</title>
+</head>
+<body>
+  <div class="js-div1"></div>
+  <div class="js-div2"></div>
+  <div class="js-div3"></div>
+  <div class="js-div4"></div>
+
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const hedding = <h2>My Name Is: Mudasir Iqbal</h2>;
+      const socks = 10, shirts = 8, ship = 5;
+      const productCost = (2*shirts) + socks;
+      const product = <h2>Product Cost: ${productCost}</h2>;
+      const shipping = <h2>Shipping Cost: ${ship}</h2>;
+      const totalCost = <h2>Total cost: ${productCost + ship}</h2>;
+      const button = <button>Place Your Order</button>;
+      const date = <h2>Today Is: {(dayjs().format('MMMM - D'))}</h2>;
+      
+      const div = (
+        <div>
+          <h1>Cotton Stacks</h1><br></br>
+          <h1>Price Rs: 10$</h1><br></br>
+          <button>Add To Card</button>
+        </div>
+      );
+      
+      const div1 = document.querySelector('.js-div1');
+      const div2 = document.querySelector('.js-div2');
+      const div3 = document.querySelector('.js-div3');
+      const div4 = document.querySelector('.js-div4');
+      ReactDOM.createRoot(div1).render(product);
+      ReactDOM.createRoot(div2).render(shipping);
+      ReactDOM.createRoot(div3).render(date);
+      const root = ReactDOM.createRoot(div4);
+
+      setInterval(() => {
+        const time = <h2>Current Time IS: {(dayjs().format('HH:mm:ss'))}</h2>;
+        root.render(time);
+      },2000);
+
+    </script>
+</body>
+</html>
