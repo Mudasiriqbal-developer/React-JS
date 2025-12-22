@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      // This Is 2 Input Boxes & 2 Buttons Using ReactJS.
+      function Prac() {
+        return (
+          <div>
+            <h2>Hello, Welcome To My Website.</h2>
+            <input placeholder="Enter Email"/><br/>
+            <input placeholder="Enter Password"/><br/>
+            <button>Login</button>
+            <button>Sign Up</button>
+
+          </div>
+          
+        )
+      }
+
+      function OutPut() {
+        return (
+          <>
+            <Prac />
+            <Prac2 message="M Mudasir Iqbal" message2="Javed Iqbal"/>
+          </>
+        )
+      }
+
+      // Now Creating a Produts List Component.
+
+      function Products({ name, Price, check, discount, image }) {
+        return (
+          <div>
+            <h2>
+              <img src={image} width="100"/><br/>
+              {name}<br/>
+              {check === 'yes' ? <del>{Price}<br/></del> : <h4>{Price}<br/></h4>}
+              {discount}<br/>
+            </h2>
+            <button>
+              Add To Card
+            </button>
+          </div>
+        )
+      }
+
+      function App() {
+        return (
+          <>
+            <Products 
+              name="Cotton Socks" 
+              Price="Price: $10.9"
+              discount="Discount Price: $8.9" 
+              check="yes"
+              image="./socks.jpg"
+            />  
+            <Products 
+              name="Tannis Ball" 
+              Price="Price: $6.00"
+              check="no"
+              image="./ball.jpg"
+            />  
+            <Products 
+              name="Plain T-Shirts" 
+              Price="Price: $7.99" 
+              discount="Discount Price: $5.9"
+              check="yes"
+              image="./t-shirt.jpg"
+            />  
+          </>
+        )
+      }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>
